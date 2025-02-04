@@ -52,9 +52,8 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-h2 {
-  margin: 2rem 0 1rem;
-  font-size: 32px;
+h2, h3{
+  text-align: center;
 }
 
 .dealer-cards {
@@ -69,4 +68,22 @@ h2 {
 .playing-card {
   height: 200px;
   width: 150px;
+}
+
+.name-header {
+  margin: 2rem 0 1rem;
+  font-size: 32px;
+}
+
+.result-section {
+  margin: 2rem 0;
+}
+
+.new-game-button {
+  margin-left: 6.8rem;
+  margin-top: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
 }
