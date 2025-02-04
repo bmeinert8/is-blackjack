@@ -103,3 +103,15 @@ button{
   color: gold;
   font-weight: 700;
 }
+
+.score-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.score-row{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
