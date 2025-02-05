@@ -87,8 +87,18 @@ h2, h3{
   margin: 2rem 0;
 }
 
-.new-game-button {
-  margin-top: 1rem;
+.result {
+  font-size: 4rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 button:hover {
@@ -110,14 +120,7 @@ button{
   font-weight: 700;
 }
 
-.score-section {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.score-row{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
+.new-game-button {
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }

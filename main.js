@@ -98,6 +98,7 @@ function hit(deck, playerHand){
   playerHand.push(deck.pop());
   const total = calculateHandTotal(playerHand);
   if (total > 21) {
+    document.querySelector('.js-result').innerHTML = 'Player Bust';
     stand(deck, dealerHand);
   }
 }
@@ -142,8 +143,7 @@ document.querySelector('.js-stand-button')
   .addEventListener('click', function(){
     stand(deck, dealerHand);
     determineWinner(playerHand, dealerHand);
-    document.querySelector('.js-result')
-  .innerHTML = resultHTML += `${determineWinner(playerHand, dealerHand)}`;
+  document.querySelector('.js-result').innerHTML = resultHTML += `${determineWinner(playerHand, dealerHand)}`;
   });
 
 //function to determine the winner of the game
@@ -155,10 +155,8 @@ function determineWinner(playerHand, dealerHand){
     return 'Push';
   } else if ((playerTotal === 21 && playerHand.length === 2) && (dealerTotal !== 21 && dealerHand.length !== 2)) {
     return 'Player Wins';
-  } else if (playerTotal > 21 && dealerTotal > 21) {
-    return 'You Lose';
   } else if (playerTotal > 21) {
-    return 'Dealer Wins';
+    return 'You Lose';
   } else if (dealerTotal > 21) {
     return 'Player Wins';
   } else if (playerTotal > dealerTotal) {
