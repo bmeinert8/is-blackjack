@@ -43,8 +43,8 @@ function dealCards(deck, playerHand, dealerHand){
 dealCards(deck, playerHand, dealerHand);
 
 //display player cards on the DOM
-card1 = playerHand[0];
-card2 = playerHand[1];
+let card1 = playerHand[0];
+let card2 = playerHand[1];
 
 document.querySelector('.js-player-cards')
   .innerHTML = `
@@ -53,7 +53,7 @@ document.querySelector('.js-player-cards')
 `;
 
 //display dealer cards on the DOM
-dealerCard1 = dealerHand[0];
+let dealerCard1 = dealerHand[0];
 
 document.querySelector('.js-dealer-cards')
   .innerHTML = `
