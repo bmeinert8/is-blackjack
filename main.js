@@ -39,3 +39,30 @@ function dealCards(deck, playerHand, dealerHand){
 }
 
 dealCards(deck, playerHand, dealerHand);
+
+function calculateHandTotal(hand) {
+  let total = 0;
+  let aces = 0;
+
+  for (const card of hand) {
+    const value = card.split('-')[0];
+    if (value === 'A') {
+      aces += 1;
+      total += 11;
+    } else if (['J', 'Q', 'K'].includes(value)) {
+      total += 10;
+    } else {
+      total += parseInt(value);
+    }
+  }
+
+  while (total > 21 && aces > 0) {
+    total -= 10;
+    aces -= 1;
+  }
+
+ console.log(total);
+}
+
+calculateHandTotal(playerHand);
+calculateHandTotal(dealerHand);
