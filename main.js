@@ -3,6 +3,7 @@ const suits = ['C', 'D', 'H', 'S'];
 const deck = shuffleDeck(buildDeck());
 const playerHand = [];
 const dealerHand = [];
+let resultHTML = '';
 
 //function to create a single deck of cards
 function buildDeck() {
@@ -140,5 +141,42 @@ function stand(deck, dealerHand){
 document.querySelector('.js-stand-button')
   .addEventListener('click', function(){
     stand(deck, dealerHand);
+    determineWinner(playerHand, dealerHand);
+    document.querySelector('.js-result')
+  .innerHTML = resultHTML += `${determineWinner(playerHand, dealerHand)}`;
   });
+
+//function to determine the winner of the game
+function determineWinner(playerHand, dealerHand){
+  const playerTotal = calculateHandTotal(playerHand);
+  const dealerTotal = calculateHandTotal(dealerHand);
+
+  if ((playerTotal === 21 && playerHand.length === 2) && (dealerTotal === 21 && dealerHand.length === 2)) {
+    return 'Push';
+  } else if ((playerTotal === 21 && playerHand.length === 2) && (dealerTotal !== 21 && dealerHand.length !== 2)) {
+    return 'Player Wins';
+  } else if (playerTotal > 21 && dealerTotal > 21) {
+    return 'You Lose';
+  } else if (playerTotal > 21) {
+    return 'Dealer Wins';
+  } else if (dealerTotal > 21) {
+    return 'Player Wins';
+  } else if (playerTotal > dealerTotal) {
+    return 'Player Wins';
+  } else if (playerTotal < dealerTotal) {
+    return 'Dealer Wins';
+  } else {
+    return 'Push';
+  }
+  
+}
+
+//function to start a new game when the new game button is clicked
+document.querySelector('.js-new-game-button')
+  .addEventListener('click', function(){
+    location.reload();
+  });
+
+
+ 
 
