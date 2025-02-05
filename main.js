@@ -49,8 +49,8 @@ let card2 = playerHand[1];
 
 document.querySelector('.js-player-cards')
   .innerHTML = `
-    <img class="playing-card" src="./cards/${card1}.png" alt="Image of a playing card">
-    <img class="playing-card" src="./cards/${card2}.png" alt="Image of a playing card">
+    <img class="playing-card" src="./images/cards/${card1}.png" alt="Image of a playing card">
+    <img class="playing-card" src="./images/cards/${card2}.png" alt="Image of a playing card">
 `;
 
 //display dealer cards on the DOM
@@ -58,8 +58,8 @@ let dealerCard1 = dealerHand[0];
 
 document.querySelector('.js-dealer-cards')
   .innerHTML = `
-     <img class="playing-card card-back" src="./cards/BACK.png" alt="Image of a playing card face down">
-      <img class="playing-card" src="./cards/${dealerCard1}.png" alt="Image of a playing card face up">
+     <img class="playing-card card-back" src="./images/cards/BACK.png" alt="Image of a playing card face down">
+      <img class="playing-card" src="./images/cards/${dealerCard1}.png" alt="Image of a playing card face up">
   `
 
 //function to calculate the total value of the player and dealers hands
@@ -110,7 +110,7 @@ document.querySelector('.js-hit-button')
     let newCard = playerHand[playerHand.length - 1];
     document.querySelector('.js-player-cards')
       .innerHTML += `
-        <img class="playing-card" src="./cards/${newCard}.png" alt="Image of a playing card">
+        <img class="playing-card" src="./images/cards/${newCard}.png" alt="Image of a playing card">
       `;
     let newTotal = calculateHandTotal(playerHand);
     document.querySelector('.js-player-score')
@@ -122,8 +122,8 @@ document.querySelector('.js-hit-button')
 function stand(deck, dealerHand){
   document.querySelector('.js-dealer-cards')
     .innerHTML = `
-      <img class="playing-card" src="./cards/${dealerHand[0]}.png" alt="Image of a playing card">
-      <img class="playing-card" src="./cards/${dealerHand[1]}.png" alt="Image of a playing card">
+      <img class="playing-card" src="./images/cards/${dealerHand[0]}.png" alt="Image of a playing card">
+      <img class="playing-card" src="./images/cards/${dealerHand[1]}.png" alt="Image of a playing card">
     `; 
   document.querySelector('.js-dealer-score')
   .innerHTML = `${calculateHandTotal(dealerHand)}`;
@@ -131,7 +131,7 @@ function stand(deck, dealerHand){
     dealerHand.push(deck.pop());
     document.querySelector('.js-dealer-cards')
       .innerHTML += `
-        <img class="playing-card" src="./cards/${dealerHand[dealerHand.length - 1]}.png" alt="Image of a playing card">
+        <img class="playing-card" src="./images/cards/${dealerHand[dealerHand.length - 1]}.png" alt="Image of a playing card">
       `;
     document.querySelector('.js-dealer-score')
       .innerHTML = `${calculateHandTotal(dealerHand)}`;
