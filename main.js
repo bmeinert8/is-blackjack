@@ -96,11 +96,21 @@ document.querySelector('.js-player-score')
 function hit(deck, playerHand){
   playerHand.push(deck.pop());
   const total = calculateHandTotal(playerHand);
-  if(total > 21){
-    console.log('Player Hand:', playerHand);
-    console.log('Bust! You lose!');
-  } else {
-    console.log('Player Hand:', playerHand);
-    console.log('Player Hand Total:', total);
+  if (total > 21) {
+    return('Bust!');
   }
 }
+
+//update the DOM with the new card and hand total when the player hits
+document.querySelector('.js-hit-button')
+  .addEventListener('click', function(){
+    hit(deck, playerHand);
+    let newCard = playerHand[playerHand.length - 1];
+    document.querySelector('.js-player-cards')
+      .innerHTML += `
+        <img class="playing-card" src="./cards/${newCard}.png" alt="Image of a playing card">
+      `;
+    let newTotal = calculateHandTotal(playerHand);
+    document.querySelector('.js-player-score')
+      .innerHTML = `${newTotal}`;
+  });

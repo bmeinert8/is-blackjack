@@ -45,6 +45,14 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /*
   9. Create a root stacking context
 */
@@ -80,7 +88,6 @@ h2, h3{
 }
 
 .new-game-button {
-  margin-left: 6.5rem;
   margin-top: 1rem;
 }
 
@@ -90,7 +97,6 @@ button:hover {
 }
 
 .player-buttons {
-  margin-left: 6rem;
   display: flex;
   gap: 1rem;
 }
