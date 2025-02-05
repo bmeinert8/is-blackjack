@@ -34,13 +34,34 @@ function dealCards(deck, playerHand, dealerHand){
   dealerHand.push(deck.pop());
   playerHand.push(deck.pop());
   dealerHand.push(deck.pop());
-  console.log(playerHand);
-  console.log(dealerHand);
+  console.log(playerHand[0]);
+  console.log(dealerHand[0]);
+  console.log(playerHand[1]);
+  return playerHand, dealerHand;
 }
 
 dealCards(deck, playerHand, dealerHand);
 
-function calculateHandTotal(hand) {
+//display player cards on the DOM
+card1 = playerHand[0];
+card2 = playerHand[1];
+
+document.querySelector('.js-player-cards')
+  .innerHTML = `
+    <img class="playing-card" src="./cards/${card1}.png" alt="Image of a playing card">
+    <img class="playing-card" src="./cards/${card2}.png" alt="Image of a playing card">
+`;
+
+//display dealer cards on the DOM
+dealerCard1 = dealerHand[0];
+
+document.querySelector('.js-dealer-cards')
+  .innerHTML = `
+     <img class="playing-card card-back" src="./cards/BACK.png" alt="Image of a playing card face down">
+      <img class="playing-card" src="./cards/${dealerCard1}.png" alt="Image of a playing card face up">
+  `
+
+/*function calculateHandTotal(hand) {
   let total = 0;
   let aces = 0;
 
@@ -79,3 +100,4 @@ function hit(deck, playerHand){
     console.log('Player Hand Total:', total);
   }
 }
+*/

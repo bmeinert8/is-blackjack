@@ -56,7 +56,7 @@ h2, h3{
   text-align: center;
 }
 
-.dealer-cards {
+.dealer-cards, .player-cards {
   display: flex;
   gap: 1rem;
 }
