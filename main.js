@@ -61,7 +61,8 @@ document.querySelector('.js-dealer-cards')
       <img class="playing-card" src="./cards/${dealerCard1}.png" alt="Image of a playing card face up">
   `
 
-/*function calculateHandTotal(hand) {
+//function to calculate the total value of the player and dealers hands
+function calculateHandTotal(hand) {
   let total = 0;
   let aces = 0;
 
@@ -81,12 +82,15 @@ document.querySelector('.js-dealer-cards')
     total -= 10;
     aces -= 1;
   }
-  console.log('Player Hand Total:', total);
   return(total);
 }
-
 calculateHandTotal(playerHand);
-calculateHandTotal(dealerHand);
+
+//display the total value of the player hand on the DOM
+let displayTotal = calculateHandTotal(playerHand);
+
+document.querySelector('.js-player-score')
+  .innerHTML = `${displayTotal}`;
 
 //function to handle the hit button
 function hit(deck, playerHand){
@@ -100,4 +104,3 @@ function hit(deck, playerHand){
     console.log('Player Hand Total:', total);
   }
 }
-*/
