@@ -60,9 +60,22 @@ function calculateHandTotal(hand) {
     total -= 10;
     aces -= 1;
   }
-
- console.log(total);
+  console.log('Player Hand Total:', total);
+  return(total);
 }
 
 calculateHandTotal(playerHand);
 calculateHandTotal(dealerHand);
+
+//function to handle the hit button
+function hit(deck, playerHand){
+  playerHand.push(deck.pop());
+  const total = calculateHandTotal(playerHand);
+  if(total > 21){
+    console.log('Player Hand:', playerHand);
+    console.log('Bust! You lose!');
+  } else {
+    console.log('Player Hand:', playerHand);
+    console.log('Player Hand Total:', total);
+  }
+}
