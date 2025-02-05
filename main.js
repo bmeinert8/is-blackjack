@@ -97,7 +97,7 @@ function hit(deck, playerHand){
   playerHand.push(deck.pop());
   const total = calculateHandTotal(playerHand);
   if (total > 21) {
-    return('Bust!');
+    stand(deck, dealerHand);
   }
 }
 
@@ -114,3 +114,31 @@ document.querySelector('.js-hit-button')
     document.querySelector('.js-player-score')
       .innerHTML = `${newTotal}`;
   });
+
+
+  //function to handle the stand button and start the dealer's turn
+function stand(deck, dealerHand){
+  document.querySelector('.js-dealer-cards')
+    .innerHTML = `
+      <img class="playing-card" src="./cards/${dealerHand[0]}.png" alt="Image of a playing card">
+      <img class="playing-card" src="./cards/${dealerHand[1]}.png" alt="Image of a playing card">
+    `; 
+  document.querySelector('.js-dealer-score')
+  .innerHTML = `${calculateHandTotal(dealerHand)}`;
+  while (calculateHandTotal(dealerHand) < 17) {
+    dealerHand.push(deck.pop());
+    document.querySelector('.js-dealer-cards')
+      .innerHTML += `
+        <img class="playing-card" src="./cards/${dealerHand[dealerHand.length - 1]}.png" alt="Image of a playing card">
+      `;
+    document.querySelector('.js-dealer-score')
+      .innerHTML = `${calculateHandTotal(dealerHand)}`;
+  } 
+}
+
+//event listener for the stand button
+document.querySelector('.js-stand-button')
+  .addEventListener('click', function(){
+    stand(deck, dealerHand);
+  });
+
