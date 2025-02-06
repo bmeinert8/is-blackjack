@@ -176,5 +176,8 @@ document.querySelector('.js-new-game-button')
   });
 
 
- 
-
+  document.querySelector('.js-strategy-button')
+  .addEventListener('click', function() {
+    const strategyDiv = document.querySelector('.js-strategy-div');
+    strategyDiv.classList.toggle('hidden');
+  });

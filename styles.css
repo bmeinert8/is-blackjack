@@ -108,7 +108,10 @@ button:hover {
 
 .player-buttons {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 button{
@@ -123,4 +126,20 @@ button{
 .new-game-button {
   margin-top: 1rem;
   font-size: 1.5rem;
+}
+
+.strategy{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.hit-button {
+  margin-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hidden {
+  display: none;
 }
