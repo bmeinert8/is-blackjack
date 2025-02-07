@@ -21,6 +21,7 @@ is-blackjack/
 ```
 
 ## Detailed Description
+
 This project is a web-based Blackjack game where the player competes against a dealer. The game follows the standard rules of Blackjack, including card values and the ability to hit or stand. The project consists of three main files:
 - 
 
