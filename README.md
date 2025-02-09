@@ -56,3 +56,4 @@ main.js
 You can play the game live at the following URL: [Blackjack Game](https://bmeinert8.github.io/is-blackjack/)
 
 ## Project Documentation
+[Project article](https://dev.to/bmeinert8/javascript-blackjack-51d2)
