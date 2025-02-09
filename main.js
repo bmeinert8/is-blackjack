@@ -102,6 +102,12 @@ function stand(deck, dealerHand) {
   determineWinner(playerHand, dealerHand);
 }
 
+// Function to disable the hit and stand buttons
+function disableButtons() {
+  document.querySelector('.js-hit-button').disabled = true;
+  document.querySelector('.js-stand-button').disabled = true;
+}
+
 // Function to determine the winner of the game
 function determineWinner(playerHand, dealerHand) {
   const playerTotal = calculateHandTotal(playerHand);
@@ -118,6 +124,7 @@ function determineWinner(playerHand, dealerHand) {
   }
 
   document.querySelector('.js-result').innerHTML = resultHTML;
+  disableButtons(); // Disable the buttons when the game is over
 }
 
 // Event listeners
